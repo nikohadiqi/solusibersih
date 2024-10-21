@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOLUSI Bersih - Layanan Kebersihan Profesional</title>
+    <!-- Link Favicon -->
+    <link rel="icon" type="image/png" href="image/title.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            text-align: center;
+            padding: 15px;
+            background: linear-gradient(135deg, #08386f, #47b0ff);
+            color: white;
+            animation: fadeIn 1s ease;
+            position: relative;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #ffcc00, #08386f);
+            animation: glow 3s infinite ease-in-out;
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+            }
+            50% {
+                box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+            }
+        }
+
+        .logo img {
+            max-width: 180px;
+            height: auto;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin: 10px 0;
+        }
+
+        h2 {
+            margin: 20px 0;
+            text-align: center;
+            color: #1c13c3;
+        }
+
+        /* Sticky Promotion Banner */
+        .promo-banner {
+            background-color: #ffcc00;
+            text-align: center;
+            padding: 10px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { background-color: #ffcc00; }
+            50% { background-color: #ffe680; }
+        }
+
+        .promo-banner p {
+            margin: 0;
+            font-weight: bold;
+            color: #333;
+            font-size: 1.2rem;
+        }
+
+        #promo-video video {
+            display: block;
+            margin: 15px auto;
+            max-width: 95%;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .produk {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 10px;
+            margin: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .produk:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .produk img {
+            max-width: 70%;
+            height: auto;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .paket-title {
+            font-size: 1.7rem;
+            color: #08386f;
+            margin: 15px 0;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .paket-price {
+            font-size: 1.5rem;
+            margin: 10px 0;
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        .wa-icon {
+            display: inline-block;
+            margin-top: 10px;
+            color: white;
+            background-color: #25D366;
+            padding: 15px 25px;
+            border-radius: 50%;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .wa-icon:hover {
+            transform: scale(1.2);
+            background-color: #1DAF61;
+        }
+
+        /* Problem and Solution Section */we
+        #problem-solution {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .problem, .solution {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            padding: 15px;
+            flex: 1 1 45%;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .problem:hover, .solution:hover {
+            transform: scale(1.1);
+        }
+
+        .problem img, .solution img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .icon {
+            font-size: 50px;
+            margin-bottom: 10px;
+            color: #08386f;
+            animation: bounce 1s ease infinite alternate;
+        }
+
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-10px); }
+        }
+
+        /* Why Choose Us Section */
+        #choose-us {
+            background-color: #f0f8ff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        ul li {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        ul li i {
+            color: #25D366;
+            margin-right: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #08386f;
+            color: white;
+            margin-top: 20px;
+        }
+
+        .paket-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .produk {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: center;
+            width: 30%;
+        }
+
+        .paket-title {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        .paket-price {
+            font-size: 1.5em;
+            color: #28a745;
+        }
+
+        .wa-icon {
+            display: inline-block;
+            margin-top: 10px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #25d366;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        .wa-icon i {
+            margin-right: 8px;
+        }
+
+        #garansi-pengiriman {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .garansi, .pengiriman {
+            width: 45%;
+            padding: 20px;
+            background-color: #f8f9fa;
+            text-align: center;
+            border: 1px solid #ddd;
+            margin-bottom: 15px;
+        }
+
+        .icon {
+            margin-right: 8px;
+            color: #28a745;
+        }
+
+        #customer-reviews {
+            margin-top: 40px;
+        }
+
+        #customer-reviews .review {
+            font-style: italic;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border: 1px solid #ddd;
+            margin: 10px 0;
+        }
+
+        .wa-sticky {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .wa-sticky a {
+            display: block;
+            background-color: #25D366;
+            color: white;
+            padding: 15px;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .wa-sticky a:hover {
+            background-color: #1DAF61;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .paket-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .produk {
+                width: 80%;
+            }
+
+            #garansi-pengiriman {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .garansi, .pengiriman {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            .wa-icon {
+                padding: 8px 12px;
+            }
+
+            #garansi-pengiriman .icon, .wa-icon i {
+                font-size: 1.2rem;
+            }
+
+            .produk img {
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="image/logo.png" alt="Logo Solusi Bersih">
+    </div>
+    <h1>Solusi Kebersihan Terbaik Untuk Anda</h1>
+</header>
+
+<div class="promo-banner">
+    <p>Promo Spesial! Diskon 20% untuk Pelanggan Baru!</p>
+</div>
+
+<section id="promo-video">
+    <video controls>
+        <source src="image/video.mp4" type="video/mp4">
+        Browser Anda tidak mendukung tag video.
+    </video>
+</section>
+
+<section id="problem-solution">
+    <div class="problem">
+        <h2><i class="fas fa-exclamation-circle icon"></i> Masalah Kebersihan</h3>
+        <p>Masalah kebersihan di rumah atau kantor bisa menjadi kendala besar dalam menciptakan lingkungan yang nyaman.</p>
+        <img src="image/paket1.png" alt="Masalah Kebersihan">
+    </div>
+
+    <div class="solution">
+        <h2><i class="fas fa-lightbulb icon"></i> Solusi Kami</h3>
+        <p>Dengan layanan kebersihan kami yang profesional, kami membantu menciptakan lingkungan yang bersih dan nyaman untuk Anda.</p>
+        <img src="image/paket1.png" alt="Solusi Kebersihan">
+    </div>
+</section>
+
+<section id="choose-us">
+    <h3>Mengapa Memilih Kami?</h2>
+    <ul>
+        <li><i class="fas fa-check"></i> Layanan Profesional</li>
+        <li><i class="fas fa-check"></i> Teknologi Canggih</li>
+        <li><i class="fas fa-check"></i> Kualitas Terjamin</li>
+        <li><i class="fas fa-check"></i> Harga Kompetitif</li>
+    </ul>
+</section>
+
+
+<section class="paket-container">
+    <div class="produk">
+        <img src="image/paket1.png" alt="Paket Kebersihan Rumah">
+        <h3 class="paket-title">Paket Kebersihan Rumah</h3>
+        <p class="paket-price">Rp 300.000</p>
+        <a href="https://wa.me/6281234567890" class="wa-icon"><i class="fab fa-whatsapp"></i> Pesan Sekarang</a>
+    </div>
+
+    <div class="produk">
+        <img src="image/paket1.png" alt="Paket Kebersihan Kantor">
+        <h3 class="paket-title">Paket Kebersihan Kantor</h3>
+        <p class="paket-price">Rp 500.000</p>
+        <a href="https://wa.me/6281234567890" class="wa-icon"><i class="fab fa-whatsapp"></i> Pesan Sekarang</a>
+    </div>
+
+    <div class="produk">
+        <img src="image/paket1.png" alt="Paket Kebersihan Taman">
+        <h3 class="paket-title">Paket Kebersihan Taman</h3>
+        <p class="paket-price">Rp 250.000</p>
+        <a href="https://wa.me/6281234567890" class="wa-icon"><i class="fab fa-whatsapp"></i> Pesan Sekarang</a>
+    </div>
+</section>
+
+<section id="garansi-pengiriman">
+    <div class="garansi">
+        <h3>GARANSI</h3>
+        <p><i class="fas fa-shield-alt icon"></i> Kami memberikan garansi kepuasan untuk setiap layanan kebersihan yang kami berikan.</p>
+    </div>
+    <div class="pengiriman">
+        <h3>PENGIRIMAN BISA COD</h3>
+        <p><i class="fas fa-truck icon"></i> Kami menyediakan layanan COD dan tepat waktu untuk setiap pelanggan.</p>
+    </div>
+</section>
+
+<section id="customer-reviews">
+    <h2>Apa Kata Pelanggan Kami?</h2>
+    <div class="review">
+        <p>"Layanan Solusi Bersih benar-benar mengagumkan! Rumah saya sekarang sangat bersih dan wangi. Sangat puas!"</p>
+    </div>
+    <div class="review">
+        <p>"Staf yang ramah dan layanan yang profesional. Kebersihan kantor kami meningkat drastis. Terima kasih!"</p>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2024 Solusi Bersih. Semua Hak Dilindungi.</p>
+</footer>
+
+<!-- Floating WhatsApp Icon -->
+<div class="wa-sticky">
+    <a href="https://wa.me/6281234567890"><i class="fab fa-whatsapp"></i></a>
+</div>
+
+</body>
+</html>
